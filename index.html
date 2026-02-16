@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+  scroll-behavior: smooth;
+}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f2027;
+      color: white;
+      overflow-x: hidden;
+     
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    button:hover {
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+    .skill-bar {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+    }
+    .skill-fill {
+      height: 100%;
+      width: 0%;
+      background: #00f6ff;
+      border-radius: 10px;
+      transition: width 1.5s ease-in-out;
+    }
+
+    /* Particles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      opacity: 0.7;
+      pointer-events: none;
+      animation: float 10s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px) translateX(0px);}
+      50% { transform: translateY(-50px) translateX(20px);}
+      100% { transform: translateY(0px) translateX(0px);}
+    }
+
+  
+  </style>
+</head>
+<body class="scroll-smooth">
+
+  
+<!-- Particles -->
+<div id="particles-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+
+ <script>
+  const numParticles = 50;
+  const container = document.getElementById('particles-container');
+
+  for (let i = 0; i < numParticles; i++) {
+    let particle = document.createElement('div');
+    particle.classList.add('particle');
+    const size = Math.random() * 4 + 2;
+    particle.style.width = particle.style.height = `${size}px`;
+    particle.style.top = `${Math.random() * 100}%`;
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+    container.appendChild(particle);
+  }
+</script>
+
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-8 py-4 bg-black/50 fixed w-full top-0 z-50 backdrop-blur-md border-b border-cyan-500">
+    <h1 class="text-2xl font-bold">W</h1>
+    <ul class="flex gap-6">
+      <li><a href="#home" class="hover:text-cyan-400">Home</a></li>
+      <li><a href="#about" class="hover:text-cyan-400">About</a></li>
+      <li><a href="#services" class="hover:text-cyan-400">Services</a></li>
+      <li><a href="#portfolio" class="hover:text-cyan-400">Portfolio</a></li>
+      <li><a href="#skills" class="hover:text-cyan-400">Skills</a></li>
+      <li><a href="#contact" class="hover:text-cyan-400">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+<section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6">
+  <h2 class="text-5xl md:text-6xl font-bold mb-4 fade-in">Hi, I'm Will Barrios</h2>
+  <p class="text-lg md:text-xl text-cyan-300 fade-in">Full-Stack Web Developer | IT Support</p>
+
+  <!-- Buttons -->
+  <div class="mt-6 flex gap-4 fade-in">
+    <button class="px-6 py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition" 
+      onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
+      View My Work
+    </button>
+
+    <!-- Social Icons -->
+    <a href="https://www.facebook.com/yourusername" target="_blank" 
+       class="flex items-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" class="w-6 h-6">
+      Facebook
+    </a>
+    <a href="https://www.linkedin.com/in/yourusername" target="_blank" 
+       class="flex items-center gap-2 px-4 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-600 transition">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-6 h-6">
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+
+ <!-- About -->
+<section id="about" class="py-20 px-8 max-w-6xl mx-auto fade-in">
+  <div class="grid md:grid-cols-2 items-center gap-12">
+    
+    <!-- Profile Picture -->
+    <div class="flex justify-center">
+      <img src="images/w.jpg" alt="Your Photo" 
+           class="w-64 h-64 rounded-2xl object-cover shadow-lg border-4 border-gray-700">
+    </div>
+
+    <!-- About Content -->
+    <div class="text-center md:text-left">
+      <h3 class="text-4xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        About Me
+      </h3>
+      <p class="text-lg text-gray-300 leading-relaxed">
+        I’m a <span class="font-semibold text-white">web developer</span> passionate about building 
+        modern, responsive, and user-friendly websites. My main tools are 
+        <span class="text-blue-400">HTML</span>, 
+        <span class="text-cyan-400">Tailwind CSS</span>, and 
+        <span class="text-yellow-400">JavaScript</span>, where I love creating 
+        <span class="italic">interactive interfaces</span> with smooth animations.  
+      </p>
+      <p class="mt-4 text-lg text-gray-400 leading-relaxed">
+        Beyond coding, I’m always learning new technologies to sharpen my craft 
+        and create experiences that leave a lasting impression.
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+
+  <!-- Services -->
+  <section id="services" class="py-20 px-8">
+    <h3 class="text-4xl font-bold text-center mb-12 fade-in">Services</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-black/70 p-6 rounded-lg shadow-lg hover:scale-105 transition fade-in">
+        <h4 class="text-2xl font-bold mb-2">Web Development</h4>
+        <p>Building responsive and interactive websites using modern technologies.</p>
+      </div>
+      <div class="bg-black/70 p-6 rounded-lg shadow-lg hover:scale-105 transition fade-in">
+        <h4 class="text-2xl font-bold mb-2">UI/UX Design</h4>
+        <p>Creating clean, modern, and user-friendly interfaces.</p>
+      </div>
+      <div class="bg-black/70 p-6 rounded-lg shadow-lg hover:scale-105 transition fade-in">
+        <h4 class="text-2xl font-bold mb-2">Consulting</h4>
+        <p>Helping clients improve their online presence and web performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-20 px-8">
+    <h3 class="text-4xl font-bold text-center mb-12 fade-in">Portfolio</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-black/70 p-4 rounded-lg shadow-lg hover:scale-105 transition fade-in">
+        <h4 class="text-xl font-bold mb-2">Project 1</h4>
+        <p>Responsive web app built with Tailwind CSS and JS animations.</p>
+      </div>
+      <div class="bg-black/70 p-4 rounded-lg shadow-lg hover:scale-105 transition fade-in">
+        <h4 class="text-xl font-bold mb-2">Project 2</h4>
+        <p>Portfolio website showcasing skills and projects with interactive UI.</p>
+      </div>
+      <div class="bg-black/70 p-4 rounded-lg shadow-lg hover:scale-105 transition fade-in">
+        <h4 class="text-xl font-bold mb-2">Project 3</h4>
+        <p>Dynamic web dashboard with charts and task management features.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+<section id="skills" class="py-20 px-8">
+  <h3 class="text-4xl font-bold text-center mb-12 fade-in">Skills</h3>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+    
+    <!-- Frontend Skills -->
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" class="w-16 h-16 mx-auto mb-4">
+      <h4 class="text-xl font-semibold text-white mb-2">HTML</h4>
+      <p class="text-gray-400 text-sm">Structuring modern, semantic, and accessible web pages.</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" class="w-16 h-16 mx-auto mb-4">
+      <h4 class="text-xl font-semibold text-white mb-2">CSS</h4>
+      <p class="text-gray-400 text-sm">Styling websites with layouts, animations, and responsive design.</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-16 h-16 mx-auto mb-4">
+      <h4 class="text-xl font-semibold text-white mb-2">JavaScript</h4>
+      <p class="text-gray-400 text-sm">Creating interactive interfaces, DOM manipulation, and animations.</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-16 h-16 mx-auto mb-4">
+      <h4 class="text-xl font-semibold text-white mb-2">Tailwind CSS</h4>
+      <p class="text-gray-400 text-sm">Fast UI development with utility-first CSS framework.</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress" class="w-16 h-16 mx-auto mb-4">
+      <h4 class="text-xl font-semibold text-white mb-2">WordPress</h4>
+      <p class="text-gray-400 text-sm">Custom themes, plugins, and full website development with CMS.</p>
+    </div>
+
+    <!-- Backend & Databases -->
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" class="w-16 h-16 mx-auto mb-4">
+      <h4 class="text-xl font-semibold text-white mb-2">PHP</h4>
+      <p class="text-gray-400 text-sm">Server-side scripting for dynamic and database-driven websites.</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="w-16 h-16 mx-auto mb-4">
+      <h4 class="text-xl font-semibold text-white mb-2">MySQL</h4>
+      <p class="text-gray-400 text-sm">Relational database management for structured data storage.</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="MS SQL" class="w-16 h-16 mx-auto mb-4">
+      <h4 class="text-xl font-semibold text-white mb-2">MS SQL</h4>
+      <p class="text-gray-400 text-sm">Database management and queries with Microsoft SQL Server.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-8 text-center fade-in">
+    <h3 class="text-4xl font-bold mb-6">Contact Me</h3>
+    <form class="max-w-md mx-auto space-y-4 bg-black/50 p-6 rounded-lg shadow-lg">
+      <input type="text" placeholder="Name" class="w-full p-3 rounded bg-gray-900 text-white border border-cyan-400 focus:ring-2 focus:ring-cyan-500">
+      <input type="email" placeholder="Email" class="w-full p-3 rounded bg-gray-900 text-white border border-cyan-400 focus:ring-2 focus:ring-cyan-500">
+      <textarea placeholder="Message" rows="4" class="w-full p-3 rounded bg-gray-900 text-white border border-cyan-400 focus:ring-2 focus:ring-cyan-500"></textarea>
+      <button type="submit" class="w-full py-3 bg-cyan-500 hover:bg-cyan-600 rounded font-bold text-black">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-400 bg-black/50 border-t border-cyan-500">
+    <p>© 2025 Noah Chambers | All Rights Reserved</p>
+  </footer>
+
+  <!-- JS Animations -->
+  <script>
+    // Fade-in scroll animation
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Skill bars animation
+    const skillFills = document.querySelectorAll('.skill-fill');
+    window.addEventListener('scroll', () => {
+      const skillsSection = document.getElementById('skills');
+      const rect = skillsSection.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 100) {
+        skillFills.forEach(fill => fill.style.width = fill.dataset.skill);
+      }
+    });
+
+    
+  </script>
+</body>
+</html>
