@@ -293,13 +293,14 @@
         
         <!-- Project 1 -->
         <div class="group bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-2 fade-in">
-          <div class="relative h-56 overflow-hidden">
-            <img src="images/bill.png" alt="Billiard Reservation System" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-            <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div class="text-center">
-                <a href="#" class="inline-block px-4 py-2 bg-cyan-500 text-black font-bold rounded-md hover:bg-cyan-400 transition-colors">Live Demo</a>
-                <a href="#" class="ml-2 inline-block px-4 py-2 bg-gray-700 text-white font-bold rounded-md hover:bg-gray-600 transition-colors">Source Code</a>
-              </div>
+          <div class="relative h-56 overflow-hidden portfolio-gallery cursor-pointer">
+            <!-- Gallery Images -->
+            <div class="gallery-item w-full h-full">
+              <img src="images/bill.png" alt="Billiard Reservation System" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="gallery-item w-full h-full hidden">
+              <!-- TODO: Replace with a different image for the gallery view -->
+              <img src="images/bill.png" alt="Billiard Reservation System - View 2" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
             </div>
           </div>
           <div class="p-6">
@@ -316,13 +317,12 @@
 
         <!-- Project 2 -->
         <div class="group bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-2 fade-in">
-          <div class="relative h-56 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80" alt="Leveriza Health Center" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-            <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div class="text-center">
-                <a href="#" class="inline-block px-4 py-2 bg-cyan-500 text-black font-bold rounded-md hover:bg-cyan-400 transition-colors">Live Demo</a>
-                <a href="#" class="ml-2 inline-block px-4 py-2 bg-gray-700 text-white font-bold rounded-md hover:bg-gray-600 transition-colors">Source Code</a>
-              </div>
+          <div class="relative h-56 overflow-hidden portfolio-gallery cursor-pointer">
+            <div class="gallery-item w-full h-full">
+              <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80" alt="Leveriza Health Center" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="gallery-item w-full h-full hidden">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Leveriza Health Center - View 2" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
             </div>
           </div>
           <div class="p-6">
@@ -338,13 +338,12 @@
 
         <!-- Project 3 -->
         <div class="group bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-2 fade-in">
-          <div class="relative h-56 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?auto=format&fit=crop&w=800&q=80" alt="Blueprint Quiz Game" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-            <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div class="text-center">
-                <a href="#" class="inline-block px-4 py-2 bg-cyan-500 text-black font-bold rounded-md hover:bg-cyan-400 transition-colors">Live Demo</a>
-                <a href="#" class="ml-2 inline-block px-4 py-2 bg-gray-700 text-white font-bold rounded-md hover:bg-gray-600 transition-colors">Source Code</a>
-              </div>
+          <div class="relative h-56 overflow-hidden portfolio-gallery cursor-pointer">
+            <div class="gallery-item w-full h-full">
+              <img src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?auto=format&fit=crop&w=800&q=80" alt="Blueprint Quiz Game" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="gallery-item w-full h-full hidden">
+              <img src="https://images.unsplash.com/photo-1517694712202-142813c0e960?auto=format&fit=crop&w=800&q=80" alt="Blueprint Quiz Game - View 2" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
             </div>
           </div>
           <div class="p-6">
@@ -358,6 +357,16 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Image Modal -->
+      <div id="image-modal" class="hidden fixed top-0 left-0 w-full h-full bg-black/90 flex items-center justify-center z-[999]">
+        <button id="modal-close" class="absolute top-6 right-8 text-white text-5xl font-bold hover:text-cyan-400 transition-colors z-10">&times;</button>
+        <button id="modal-prev" class="absolute top-1/2 left-8 text-white text-4xl font-bold hover:text-cyan-400 transition-colors z-10">&#10094;</button>
+        <button id="modal-next" class="absolute top-1/2 right-8 text-white text-4xl font-bold hover:text-cyan-400 transition-colors z-10">&#10095;</button>
+        <div class="relative w-full h-full flex items-center justify-center">
+          <img id="modal-image" src="" alt="Portfolio Image" class="max-w-[90vw] max-h-[80vh] object-contain">
+        </div>
       </div>
 
       <!-- See More Button -->
@@ -545,6 +554,57 @@
 
     // Dynamic year for footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Portfolio Modal Gallery
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('image-modal');
+      if (!modal) return;
+
+      const modalImg = document.getElementById('modal-image');
+      const closeModalBtn = document.getElementById('modal-close');
+      const prevBtn = document.getElementById('modal-prev');
+      const nextBtn = document.getElementById('modal-next');
+      const portfolioGalleries = document.querySelectorAll('.portfolio-gallery');
+
+      let currentGalleryItems = [];
+      let currentImageIndex = 0;
+
+      function showModal() { modal.classList.remove('hidden'); }
+      function hideModal() { modal.classList.add('hidden'); }
+
+      function showImage(index) {
+        if (index >= 0 && index < currentGalleryItems.length) {
+          const imgElement = currentGalleryItems[index].querySelector('img');
+          if (imgElement) {
+            modalImg.src = imgElement.src;
+            currentImageIndex = index;
+          }
+        }
+      }
+
+      portfolioGalleries.forEach(gallery => {
+        gallery.addEventListener('click', () => {
+          currentGalleryItems = Array.from(gallery.querySelectorAll('.gallery-item'));
+          if (currentGalleryItems.length > 0) {
+            showImage(0); // Start with the first image in the gallery
+            showModal();
+          }
+        });
+      });
+
+      closeModalBtn.addEventListener('click', hideModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
+      nextBtn.addEventListener('click', () => { showImage((currentImageIndex + 1) % currentGalleryItems.length); });
+      prevBtn.addEventListener('click', () => { showImage((currentImageIndex - 1 + currentGalleryItems.length) % currentGalleryItems.length); });
+
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('hidden')) {
+          if (e.key === 'ArrowRight') nextBtn.click();
+          else if (e.key === 'ArrowLeft') prevBtn.click();
+          else if (e.key === 'Escape') hideModal();
+        }
+      });
+    });
   </script>
 </body>
 </html>
