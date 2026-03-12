@@ -304,16 +304,16 @@
   </section>
 
   <!-- Portfolio -->
-  <section id="portfolio" class="py-32 px-6 bg-black">
+  <section id="portfolio" class="py-20 lg:py-32 px-6 bg-black">
     <div class="max-w-7xl mx-auto">
-      <div class="mb-24 text-center fade-in">
-        <h3 class="text-6xl font-bold text-white mb-4 tracking-tight font-sans">
+      <div class="mb-16 lg:mb-24 text-center fade-in">
+        <h3 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight font-sans">
           My Projects
         </h3>
         <p class="text-gray-500 text-sm uppercase tracking-widest mt-2">Selected Works</p>
       </div>
 
-      <div class="flex flex-col gap-32">
+      <div class="flex flex-col gap-24 lg:gap-32">
         
         <!-- Project 1 -->
         <div class="group grid lg:grid-cols-2 gap-16 items-start fade-in">
@@ -356,7 +356,7 @@
           
           <!-- Right: Content -->
           <div class="flex flex-col justify-center h-full pt-4">
-            <h4 class="text-4xl font-bold text-white mb-6">Billiard Reservation System</h4>
+            <h4 class="text-3xl lg:text-4xl font-bold text-white mb-6">Billiard Reservation System</h4>
             <p class="text-gray-400 text-lg leading-relaxed mb-8">A comprehensive web-based booking system for managing billiard table reservations and customer schedules efficiently.</p>
             
             <!-- Tech Tags (Outlined Pill) -->
@@ -428,8 +428,41 @@
 
         <!-- Project 2 -->
         <div class="group grid lg:grid-cols-2 gap-16 items-start fade-in">
-          <div class="flex flex-col justify-center h-full pt-4">
-            <h4 class="text-4xl font-bold text-white mb-6">Leveriza Health Center</h4>
+          <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl portfolio-gallery cursor-pointer bg-gray-900/50">
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all z-10"></div>
+            
+            <div class="gallery-item w-full h-[450px] transition-transform duration-700 group-hover:scale-105">
+              <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80" alt="Leveriza Health Center" class="w-full h-full object-cover">
+            </div>
+            <div class="gallery-item w-full h-full hidden">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Leveriza Health Center - View 2" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Data Card -->
+            <div class="absolute top-6 right-6 bg-black/60 backdrop-blur-md border border-white/10 p-3 rounded-xl flex items-center gap-3 z-20 shadow-lg transform translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+              <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 font-medium">Industry</p>
+                <p class="text-sm font-bold text-white">Healthcare</p>
+              </div>
+            </div>
+
+             <!-- Data Card 2 -->
+             <div class="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md border border-white/10 py-3 px-5 rounded-xl flex items-center gap-4 z-20 shadow-lg">
+              <div class="flex -space-x-3">
+                 <div class="w-8 h-8 rounded-full bg-gray-700 border-2 border-black flex items-center justify-center text-xs">P</div>
+                 <div class="w-8 h-8 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center text-xs">M</div>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 font-medium">Type</p>
+                <p class="text-sm font-bold text-white">Management</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col justify-center h-full pt-4 lg:order-first">
+            <h4 class="text-3xl lg:text-4xl font-bold text-white mb-6">Leveriza Health Center</h4>
             <p class="text-gray-400 text-lg leading-relaxed mb-8">A streamlined patient management and information system designed to optimize workflow for Leveriza Health Center.</p>
             
             <div class="flex flex-wrap gap-3 mb-10">
@@ -495,40 +528,6 @@
               </div>
             </div>
           </div>
-
-          <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl portfolio-gallery cursor-pointer bg-gray-900/50">
-            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all z-10"></div>
-            
-            <div class="gallery-item w-full h-[450px] transition-transform duration-700 group-hover:scale-105">
-              <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80" alt="Leveriza Health Center" class="w-full h-full object-cover">
-            </div>
-            <div class="gallery-item w-full h-full hidden">
-              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Leveriza Health Center - View 2" class="w-full h-full object-cover">
-            </div>
-
-            <!-- Data Card -->
-            <div class="absolute top-6 right-6 bg-black/60 backdrop-blur-md border border-white/10 p-3 rounded-xl flex items-center gap-3 z-20 shadow-lg transform translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-              <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-              </div>
-              <div>
-                <p class="text-xs text-gray-400 font-medium">Industry</p>
-                <p class="text-sm font-bold text-white">Healthcare</p>
-              </div>
-            </div>
-
-             <!-- Data Card 2 -->
-             <div class="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md border border-white/10 py-3 px-5 rounded-xl flex items-center gap-4 z-20 shadow-lg">
-              <div class="flex -space-x-3">
-                 <div class="w-8 h-8 rounded-full bg-gray-700 border-2 border-black flex items-center justify-center text-xs">P</div>
-                 <div class="w-8 h-8 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center text-xs">M</div>
-              </div>
-              <div>
-                <p class="text-xs text-gray-400 font-medium">Type</p>
-                <p class="text-sm font-bold text-white">Management</p>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- Project 3 -->
@@ -559,7 +558,7 @@
           </div>
           
           <div class="flex flex-col justify-center h-full pt-4">
-            <h4 class="text-4xl font-bold text-white mb-6">Blueprint Quiz Game</h4>
+            <h4 class="text-3xl lg:text-4xl font-bold text-white mb-6">Blueprint Quiz Game</h4>
             <p class="text-gray-400 text-lg leading-relaxed mb-8">An interactive and educational quiz game designed to challenge and test knowledge on engineering blueprints.</p>
             
             <div class="flex flex-wrap gap-3 mb-10">
