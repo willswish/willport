@@ -1,0 +1,78 @@
+html {
+  scroll-behavior: smooth;
+}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: black;
+      color: white;
+      overflow-x: hidden;
+     
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    button:hover {
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+    .skill-bar {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+    }
+    .skill-fill {
+      height: 100%;
+      width: 0%;
+      background: #00f6ff;
+      border-radius: 10px;
+      transition: width 1.5s ease-in-out;
+    }
+
+    /* Particles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      opacity: 0.7;
+      pointer-events: none;
+      animation: float 10s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px) translateX(0px);}
+      50% { transform: translateY(-50px) translateX(20px);}
+      100% { transform: translateY(0px) translateX(0px);}
+    }
+
+    /* Feature Button Animation */
+    @keyframes dot-scroll {
+      0% { transform: translateX(0); opacity: 0; }
+      20% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateX(-60px); opacity: 0; }
+    }
+    .animate-dot-scroll {
+      animation: dot-scroll 2s infinite linear;
+    }
+
+    /* Infinite Scroll Animation */
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll-left {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 40s linear infinite;
+  will-change: transform;
+    }
+
+.animate-scroll-left:hover {
+  animation-play-state: paused;
+}
